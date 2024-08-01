@@ -2,16 +2,34 @@
   "name": "auto-login",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./index.js"
+    "start": "tsx ./index.ts",
+    "install_arm64": "build-opencv --version 4.9.0 --flag=\"-DCMAKE_SYSTEM_PROCESSOR=arm64 -DCMAKE_OSX_ARCHITECTURES=arm64\" build",
+    "install_4.5.5_cuda": "build-opencv --version 4.9.0 --flags=\"-DWITH_CUDA=ON -DWITH_CUDNN=ON -DOPENCV_DNN_CUDA=ON -DCUDA_FAST_MATH=ON\" build",
+    "do-install": "build-opencv build",
+    "buildcv": "build-opencv --incDir /usr/local/Cellar/opencv/4.9.0_7/include --libDir /usr/local/Cellar/opencv/4.9.0_7/lib --binDir /usr/local/Cellar/opencv/4.9.0_7/bin --nobuild rebuild"
+  },
+  "opencv4nodejs": {
+    "disableAutoBuild": 1,
+    "opencvIncludeDir": "/usr/local/Cellar/opencv/4.9.0_7/include",
+    "opencvLibDir": "/usr/local/Cellar/opencv/4.9.0_7/lib",
+    "opencvBinDir": "/usr/local/Cellar/opencv/4.9.0_7/bin"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^20.12.7",
+    "@types/selenium-webdriver": "^4.1.22",
+    "@u4/opencv4nodejs": "^6.5.3",
     "koa": "^2.15.3",
-    "selenium-webdriver": "^4.19.0"
+    "node-gyp": "^10.1.0",
+    "puppeteer": "^22.6.5",
+    "selenium-webdriver": "^4.19.0",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
   }
 }
