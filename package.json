@@ -2,16 +2,24 @@
   "name": "auto-login",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./index.js"
+    "start": "tsx src/index.ts"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^22.13.1",
+    "@types/selenium-webdriver": "^4.1.28",
     "koa": "^2.15.3",
-    "selenium-webdriver": "^4.19.0"
+    "robotjs": "^0.6.0",
+    "selenium-webdriver": "^4.28.1",
+    "sharp": "^0.33.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
   }
 }
